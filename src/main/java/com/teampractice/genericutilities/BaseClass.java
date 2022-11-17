@@ -11,6 +11,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
+import com.beust.jcommander.Parameter;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 /*
  * @Rakesh Babu K N
@@ -32,9 +34,10 @@ public class BaseClass {
 		System.out.println("It will launch the database connection");
 	}
 	//this method launch the browser as per the parameter passed by user  
+	
 	@BeforeClass
-	public void beforeClass(String browser)
-	{ 
+	public void beforeClass()
+	{ String browser="chrome";
 		if(browser=="chrome")
 		{
 			WebDriverManager.chromedriver().setup();
@@ -46,6 +49,7 @@ public class BaseClass {
 			WebDriverManager.firefoxdriver().setup();
 			driver=new FirefoxDriver();
 		}
+		driver.get("https://www.ebay.com/");
 	}
 	//this method will login to application
 	@BeforeMethod
