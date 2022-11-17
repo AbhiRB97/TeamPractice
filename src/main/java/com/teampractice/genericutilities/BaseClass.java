@@ -25,6 +25,7 @@ public class BaseClass {
 	public DatabaseUtiliy dLib=new DatabaseUtiliy();
 	public FileUtility fLIb=new FileUtility();
 	public WebDriverUtility wLib=new WebDriverUtility();
+	public static WebDriver sDriver;
 	
 	public WebDriver driver;
 	// to launch the database connection

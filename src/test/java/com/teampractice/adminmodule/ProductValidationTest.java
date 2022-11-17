@@ -26,7 +26,7 @@ public class ProductValidationTest extends BaseClass {
 		pp.getCartButton().click();
 		String expe = pp.getSamsungProduct().getText();
 		String actual = pp.getSamsungProduct().getText();
-		Assert.assertEquals(expe, actual);
+		Assert.assertEquals(expe, "");
 		
 		
 		

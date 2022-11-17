@@ -33,7 +33,7 @@ public class ListImpClass extends BaseClass implements ITestListener {
 	public void onTestFailure(ITestResult result) {
 		test.log(Status.FAIL, result.getMethod().getMethodName()+" is Failed");
 		test.log(Status.FAIL, result.getThrowable());
-		String path1 = getScreenShot(driver);
+		String path1 = getScreenShot(sDriver);
 		test.addScreenCaptureFromBase64String(path1);
 		
 	}
