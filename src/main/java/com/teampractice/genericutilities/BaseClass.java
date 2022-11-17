@@ -22,6 +22,7 @@ public class BaseClass {
 	public ExcelUtility eLib=new ExcelUtility();
 	public DatabaseUtiliy dLib=new DatabaseUtiliy();
 	public FileUtility fLIb=new FileUtility();
+	public WebDriverUtility wLib=new WebDriverUtility();
 	
 	public WebDriver driver;
 	// to launch the database connection
