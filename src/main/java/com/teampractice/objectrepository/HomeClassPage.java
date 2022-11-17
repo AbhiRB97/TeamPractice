@@ -13,6 +13,18 @@ public class HomeClassPage {
 	@FindBy(xpath = "//input[@class='gh-tb ui-autocomplete-input']") private WebElement searchTextField;
 	
 	@FindBy(xpath = "//input[@class='btn btn-prim gh-spr']") private WebElement searchBtn;
+
+	public WebElement getSearchTextField() {
+		return searchTextField;
+	}
+
+	
+
+	public WebElement getSearchBtn() {
+		return searchBtn;
+	}
+
+	
 	
 
 
