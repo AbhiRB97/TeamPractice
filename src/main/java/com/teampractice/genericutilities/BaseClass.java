@@ -19,6 +19,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  */
 
 public class BaseClass {
+	public ExcelUtility eLib=new ExcelUtility();
+	public DatabaseUtiliy dLib=new DatabaseUtiliy();
+	public FileUtility fLIb=new FileUtility();
 	
 	public WebDriver driver;
 	// to launch the database connection
