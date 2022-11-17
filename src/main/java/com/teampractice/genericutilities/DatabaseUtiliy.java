@@ -15,7 +15,7 @@ public class DatabaseUtiliy {
 		try {
 			driver = new Driver();
 			DriverManager.registerDriver(driver);
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3036","root","root");
+			con = DriverManager.getConnection(IConstants.JDBCUrl,"root","root");
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

@@ -1,9 +1,9 @@
 package com.teampractice.genericutilities;
 
 public interface IConstants {
-	String excelPath=".\\Data\\TestDataTemplate.xlsx";
-	String propertyFilePath=".\\Data\\commonData.properties";
-	String JDBCUrl="";
+	String excelPath=".\\data\\PracticeSheet.xlsx";
+	String propertyFilePath=".\\data\\Properties.properties";
+	String JDBCUrl="jdbc:mysql://localhost:3036";
 	String databaseUserName="root";
 	String databasePassword="root";
 	int implicitlyTimeOut=20;
