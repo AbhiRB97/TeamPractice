@@ -27,7 +27,7 @@ public class BaseClass {
 	public WebDriverUtility wLib=new WebDriverUtility();
 	public static WebDriver sDriver;
 	
-	public WebDriver driver;
+	public static WebDriver driver;
 	// to launch the database connection
 	@BeforeSuite
 	public void beforeSuite()
