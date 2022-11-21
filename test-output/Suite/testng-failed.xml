@@ -4,6 +4,7 @@
   <parameter name="browser" value="chrome"/>
   <test thread-count="5" name="Test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.teampractice.adminmodule.ProductValidationTest">
         <methods>
           <include name="afterMethod"/>
@@ -15,6 +16,19 @@
           <include name="afterSuite"/>
         </methods>
       </class> <!-- com.teampractice.adminmodule.ProductValidationTest -->
+=======
+      <class name="com.teampractice.adminmodule.SelectAProductAndCheckOutAsAGuestTest">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="checkOutAsGuestTest"/>
+          <include name="beforeMethod"/>
+          <include name="beforeClass"/>
+          <include name="afterClass"/>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+        </methods>
+      </class> <!-- com.teampractice.adminmodule.SelectAProductAndCheckOutAsAGuestTest -->
+>>>>>>> branch 'master' of https://github.com/AbhiRB97/TeamPractice.git
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
