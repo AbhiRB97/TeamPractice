@@ -11,8 +11,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
-import com.beust.jcommander.Parameter;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 /*
  * @Rakesh Babu K N
@@ -20,7 +18,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * it will take care of all db connection,browser launch, login,logout,browser close,and DB close
  */
 
-public class BaseClass {
+public class BaseClass{
 	public ExcelUtility eLib=new ExcelUtility();
 	public DatabaseUtiliy dLib=new DatabaseUtiliy();
 	public FileUtility fLIb=new FileUtility();
@@ -34,17 +32,18 @@ public class BaseClass {
 	{
 		System.out.println("It will launch the database connection");
 	}
-	//this method launch the browser as per the parameter passed by user  
-	
+//this method launch the browser as per the parameter passed by user
 	@BeforeClass
 	public void beforeClass()
 	{ String browser="chrome";
 		if(browser=="chrome")
 		{
-			WebDriverManager.chromedriver().setup();
 			ChromeOptions options=new ChromeOptions();
-			options.addArguments("--disable-notifications");
-			 driver=new ChromeDriver(options);
+			options.setExperimentalOption("excludeSwitches", new String[] {"enable-automation"});
+			WebDriverManager.chromedriver().setup();
+			driver=new ChromeDriver(options);
+			driver.manage().window().maximize();
+			wLib.waitForElementInDOM(driver);
 		}	else 
 		{
 			WebDriverManager.firefoxdriver().setup();
@@ -68,7 +67,7 @@ public class BaseClass {
 	@AfterClass
 	public void afterClass()
 	{
-		driver.quit();
+	//	driver.quit();
 	}
 	// this method will close the database connection
 	@AfterSuite
@@ -76,6 +75,5 @@ public class BaseClass {
 	{
 		System.out.println("DB connnection is closed");
 	}
-	
 
 }
