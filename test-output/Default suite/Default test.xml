@@ -46,4 +46,5 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
   <testcase classname="com.teampractice.adminmodule.SelectAProductAndCheckOutAsAGuestTest" name="checkOutAsGuestTest" time="0.0">
     <skipped/>
   </testcase> <!-- checkOutAsGuestTest -->
+<testsuite ignored="0" hostname="DESKTOP-BAJSTAT" failures="0" tests="0" name="Default test" time="22.552" errors="0" timestamp="2022-11-17T17:26:10 IST">
 </testsuite> <!-- Default test -->

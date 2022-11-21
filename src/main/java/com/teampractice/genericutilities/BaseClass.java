@@ -12,6 +12,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 
+import com.beust.jcommander.Parameter;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 /*
  * @Rakesh Babu K N
@@ -19,8 +21,13 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * it will take care of all db connection,browser launch, login,logout,browser close,and DB close
  */
 
-public class BaseClass {
-
+public class BaseClass{
+	public ExcelUtility eLib=new ExcelUtility();
+	public DatabaseUtiliy dLib=new DatabaseUtiliy();
+	public FileUtility fLIb=new FileUtility();
+	public WebDriverUtility wLib=new WebDriverUtility();
+	public static WebDriver sDriver;
+	
 	public WebDriver driver;
 	// to launch the database connection
 	@BeforeSuite
@@ -28,12 +35,11 @@ public class BaseClass {
 	{
 		System.out.println("It will launch the database connection");
 	}
-
-	//this method launch the browser as per the parameter passed by user
+//this method launch the browser as per the parameter passed by user
 	@Parameters("Browser")
 	@BeforeClass
-	public void beforeClass(String browser)
-	{ 
+	public void beforeClass()
+	{ String browser="chrome";
 		if(browser=="chrome")
 		{
 			WebDriverManager.chromedriver().setup();
@@ -45,6 +51,7 @@ public class BaseClass {
 			WebDriverManager.firefoxdriver().setup();
 			driver=new FirefoxDriver();
 		}
+		driver.get("https://www.ebay.com/");
 	}
 	//this method will login to application
 	@BeforeMethod

@@ -12,7 +12,7 @@ public class HomeClassPage {
 	}
 	@FindBy(xpath = "//input[@class='gh-tb ui-autocomplete-input']")
 	private WebElement searchTextField;
-	
+  
 	@FindBy(xpath = "//input[@class='btn btn-prim gh-spr']")
 	private WebElement searchBtn;
 	
@@ -21,6 +21,16 @@ public class HomeClassPage {
 	
 	@FindBy(xpath = "//ul[@class='hl-popular-destinations-elements']//a[contains(@href,'/Beauty/')]")
 	private WebElement beautyBtn;
+
+	@FindBy(xpath = "//input[@class='btn btn-prim gh-spr']") private WebElement searchBtn;
+
+	public WebElement getSearchTextField() {
+		return searchTextField;
+	}
+
+	public WebElement getSearchBtn() {
+		return searchBtn;
+	}
 
 	public WebElement getSearchTextField() {
 		return searchTextField;
