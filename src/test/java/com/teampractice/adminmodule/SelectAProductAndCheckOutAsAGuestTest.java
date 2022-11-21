@@ -1,14 +1,16 @@
 package com.teampractice.adminmodule;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.teampractice.genericutilities.BaseClass;
 import com.teampractice.objectrepository.BeautyPage;
-import com.teampractice.objectrepository.BodyMakeUpProductsPage;
 import com.teampractice.objectrepository.HomeClassPage;
+import com.teampractice.objectrepository.LipMakeUpProductsPage;
 import com.teampractice.objectrepository.MakeUpProductsPage;
-import com.teampractice.objectrepository.NARZProductPage;
+import com.teampractice.objectrepository.MerrezcaProductPage;
 
+@Listeners(com.teampractice.genericutilities.ListImpClass.class)
 public class SelectAProductAndCheckOutAsAGuestTest extends BaseClass{
 
 	@Test
@@ -21,13 +23,14 @@ public class SelectAProductAndCheckOutAsAGuestTest extends BaseClass{
 		bp.getMakeupBtn().click();
 
 		MakeUpProductsPage mp = new MakeUpProductsPage(driver);
-		mp.getNextSldeBtn().click();;
-		mp.getBodyBtn().click();
+		mp.getLipBtn().click();
 
-		BodyMakeUpProductsPage bop = new BodyMakeUpProductsPage(driver);
-		bop.getProductBtn().click();
+		LipMakeUpProductsPage lp = new LipMakeUpProductsPage(driver);
+		lp.getProductBtn().click();
 
-		NARZProductPage np = new NARZProductPage(driver);
+		wLib.switchToWindow(driver);
+
+		MerrezcaProductPage np = new MerrezcaProductPage(driver);
 		np.getBuyNowBtn().click();
 		np.getCheckOutAsGuestBtn().click();
 

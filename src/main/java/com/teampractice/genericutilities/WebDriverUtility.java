@@ -192,6 +192,23 @@ public class WebDriverUtility {
 		   act.sendKeys(Keys.ENTER).perform();
 	   } 
 	   
+	   public void switchToWindow(WebDriver driver) {
+		   Set<String> title = driver.getWindowHandles();
+
+			for (String wd : title) {
+
+				if(wd.equals(title)) {
+
+				}
+
+				else {
+
+					driver.switchTo().window(wd);
+
+				}
+
+			}
+	   }
 }       
 
 

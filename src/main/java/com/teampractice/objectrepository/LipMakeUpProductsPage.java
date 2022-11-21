@@ -5,13 +5,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class BodyMakeUpProductsPage {
+public class LipMakeUpProductsPage {
 	
-	public BodyMakeUpProductsPage(WebDriver driver) {
+	public LipMakeUpProductsPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//h3[text()='NARS Liquid Body Tint LAGUNA 3.8 OZ/100 ML NEW IN BOX!']/parent::a")
+	@FindBy(xpath = "//h3[text()='Merrezca Dranatic Lip Color #SM03 3.5 g']/parent::a")
 	private WebElement productBtn;
 
 	public WebElement getProductBtn() {

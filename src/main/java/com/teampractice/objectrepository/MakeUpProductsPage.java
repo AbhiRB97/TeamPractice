@@ -11,18 +11,11 @@ public class MakeUpProductsPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath = "//h2[text()='Shop by Category']/ancestor::div[@class='b-carousel__header ']/following-sibling::div//button[@aria-label='Next Slide']")
-	private WebElement nextSldeBtn;
-	
-	@FindBy(xpath = "//a[contains(@href,'/Body-Makeup-Products/')]/div")
-	private WebElement bodyBtn;
+	@FindBy(xpath = "//a[contains(@href,'/Lip-Makeup/')]/div")
+	private WebElement lipBtn;
 
-	public WebElement getNextSldeBtn() {
-		return nextSldeBtn;
-	}
-
-	public WebElement getBodyBtn() {
-		return bodyBtn;
+	public WebElement getLipBtn() {
+		return lipBtn;
 	}
 
 }
