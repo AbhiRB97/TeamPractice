@@ -26,22 +26,26 @@ public class ListImpClass extends BaseClass implements ITestListener {
 		test = reports.createTest(result.getMethod().getMethodName());
 	}
 
+	
 	public void onTestSuccess(ITestResult result) {
 		test.log(Status.PASS, result.getMethod().getMethodName()+" is Passed");
 	}
 
+	
 	public void onTestFailure(ITestResult result) {
 		test.log(Status.FAIL, result.getMethod().getMethodName()+" is Failed");
 		test.log(Status.FAIL, result.getThrowable());
-		String path1 = getScreenShot(sDriver);
-		test.addScreenCaptureFromBase64String(path1);
-		
+//		String path1 = getScreenShot(driver);
+//		test.addScreenCaptureFromBase64String(path1);
+//		
 	}
 
+	
 	public void onTestSkipped(ITestResult result) {
 		test.log(Status.SKIP, result.getMethod().getMethodName()+" is Skipped");
 	}
 
+	
 	public void onStart(ITestContext context) {
 		String currentTime = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 		sparkReporter = new ExtentSparkReporter(new File("./Reports/MyReport"+currentTime+".html"));
@@ -58,6 +62,7 @@ public class ListImpClass extends BaseClass implements ITestListener {
 	public void onFinish(ITestContext context) {
 		reports.flush();
 	}
+	
 	
 	public static String getScreenShot(WebDriver driver)
 	{

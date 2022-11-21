@@ -1,5 +1,7 @@
 package com.teampractice.genericutilities;
 
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -10,6 +12,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
 
 import com.beust.jcommander.Parameter;
 
@@ -27,7 +30,10 @@ public class BaseClass {
 	public WebDriverUtility wLib=new WebDriverUtility();
 	public static WebDriver sDriver;
 	
-	public WebDriver driver;
+	
+
+	
+	public static WebDriver driver;
 	// to launch the database connection
 	@BeforeSuite
 	public void beforeSuite()
@@ -35,11 +41,13 @@ public class BaseClass {
 		System.out.println("It will launch the database connection");
 	}
 	//this method launch the browser as per the parameter passed by user  
-	
+	@Parameters("browser")
 	@BeforeClass
-	public void beforeClass()
-	{ String browser="chrome";
-		if(browser=="chrome")
+	public void beforeClass(String browser)
+	{
+	
+		
+		if(browser==browser)
 		{
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options=new ChromeOptions();
@@ -51,6 +59,7 @@ public class BaseClass {
 			driver=new FirefoxDriver();
 		}
 		driver.get("https://www.ebay.com/");
+		
 	}
 	//this method will login to application
 	@BeforeMethod

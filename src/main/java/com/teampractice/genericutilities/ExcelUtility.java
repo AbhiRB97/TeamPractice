@@ -10,11 +10,11 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 public class ExcelUtility {
 	
 	public String getExcelData(String sheet, int row, int cell) throws Throwable {
-		FileInputStream fis = new  FileInputStream("./data");
+		FileInputStream fis = new  FileInputStream(IConstants.excelPath1);
 		Workbook wb = WorkbookFactory.create(fis);
 		Sheet sh = wb.getSheet(sheet);
 		Row ro = sh.getRow(row);
-		return ro.getCell(cell).toString();
+		return ro.getCell(cell).getStringCellValue();
 	}
 
 }
