@@ -10,6 +10,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
 
 import com.beust.jcommander.Parameter;
 
@@ -20,7 +21,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * it will take care of all db connection,browser launch, login,logout,browser close,and DB close
  */
 
-public class BaseClass {
+public class BaseClass{
 	public ExcelUtility eLib=new ExcelUtility();
 	public DatabaseUtiliy dLib=new DatabaseUtiliy();
 	public FileUtility fLIb=new FileUtility();
@@ -34,8 +35,8 @@ public class BaseClass {
 	{
 		System.out.println("It will launch the database connection");
 	}
-	//this method launch the browser as per the parameter passed by user  
-	
+//this method launch the browser as per the parameter passed by user
+	@Parameters("Browser")
 	@BeforeClass
 	public void beforeClass()
 	{ String browser="chrome";
@@ -44,7 +45,7 @@ public class BaseClass {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options=new ChromeOptions();
 			options.addArguments("--disable-notifications");
-			 driver=new ChromeDriver(options);
+			driver=new ChromeDriver(options);
 		}	else 
 		{
 			WebDriverManager.firefoxdriver().setup();
@@ -76,6 +77,5 @@ public class BaseClass {
 	{
 		System.out.println("DB connnection is closed");
 	}
-	
 
 }
