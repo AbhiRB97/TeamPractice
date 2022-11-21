@@ -10,6 +10,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 /*
@@ -19,7 +20,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  */
 
 public class BaseClass {
-	
+
 	public WebDriver driver;
 	// to launch the database connection
 	@BeforeSuite
@@ -27,7 +28,9 @@ public class BaseClass {
 	{
 		System.out.println("It will launch the database connection");
 	}
-	//this method launch the browser as per the parameter passed by user  
+
+	//this method launch the browser as per the parameter passed by user
+	@Parameters("Browser")
 	@BeforeClass
 	public void beforeClass(String browser)
 	{ 
@@ -36,7 +39,7 @@ public class BaseClass {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options=new ChromeOptions();
 			options.addArguments("--disable-notifications");
-			 driver=new ChromeDriver(options);
+			driver=new ChromeDriver(options);
 		}	else 
 		{
 			WebDriverManager.firefoxdriver().setup();
@@ -67,6 +70,5 @@ public class BaseClass {
 	{
 		System.out.println("DB connnection is closed");
 	}
-	
 
 }
